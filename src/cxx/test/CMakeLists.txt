@@ -1,6 +1,9 @@
 # Include Catch CMake integration module
 include("${CMAKE_CURRENT_SOURCE_DIR}/Catch2/cmake/Catch.cmake")
 
+#include_directories(/usr/local/paraview/include/paraview-5.8)
+include_directories($ENV{CPATH}/paraview-5.8)
+
 set(Test_SRCS catch_main.cxx generate_testfile.cxx vtkNetCDFLFRicReaderUnitTest.cxx
     vtkNetCDFLFRicReaderLeakTest.cxx vtkNetCDFLFRicReaderRegressionTest.cxx
     netCDFLFRicFileUnitTest.cxx netCDFLFRicReaderUtilsUnitTest.cxx)

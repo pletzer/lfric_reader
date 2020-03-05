@@ -11,9 +11,22 @@ Use the following commands to set up the build system and build the reader:
 PV_ROOT_PATH=/path/to/paraview/installation
 export PATH=$PV_ROOT_PATH/bin:$PATH
 export CPATH=$PV_ROOT_PATH/include${CPATH:+:$CPATH}
-export LD_LIBRARY_PATH=$PV_ROOT_PATH/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
 export LIBRARY_PATH=$PV_ROOT_PATH/lib${LIBRARY_PATH:+:$LIBRARY_PATH}
+```
 
+On Linux:
+```
+export LD_LIBRARY_PATH=$PV_ROOT_PATH/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
+```
+
+On Mac:
+```
+export DYLD_LIBRARY_PATH=$PV_ROOT_PATH/lib${DYLD_LIBRARY_PATH:+:$DYLD_LIBRARY_PATH}
+# install Qt5 using brew
+export PATH=/usr/local/Cellar/qt/5.14.0/bin/:$PATH
+```
+
+```
 cd src/cxx
 mkdir build
 cd build
